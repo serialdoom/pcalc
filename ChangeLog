@@ -1,0 +1,828 @@
+commit 010fda934b83a66201b4dbc9f13564cabd77c78f
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 03:30:18 2014 -0500
+
+    add -o option to output octal too
+    
+    Also update the DEC variable to output octal on demand.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ README             |  2 +-
+ help.c             |  2 +-
+ pcalc.y            |  7 +++++++
+ print.c            | 12 +++++++++++-
+ ptest/pcalc.008    |  5 +++++
+ ptest/pcalc.008.at |  1 +
+ 6 files changed, 26 insertions(+), 3 deletions(-)
+
+commit 7210d09a093972b3bf07e7eb70df77f588070626
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 03:06:58 2014 -0500
+
+    fix distcheck with newer tooling
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit e6c57707f5f5df5a638931941f47bf2aa9c04911
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 03:01:55 2014 -0500
+
+    improve extended help output
+    
+    Also fill in some missing entries in the terse help summary.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ help.c  | 30 +++++++++++-------------------
+ pcalc.y | 38 +++++++++++++++++++++-----------------
+ 2 files changed, 32 insertions(+), 36 deletions(-)
+
+commit dbb043ad90b2986d96b513fbe8e1f46bf3a63926
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 02:39:28 2014 -0500
+
+    use CFLAGS when linking
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 06a77e237e5a8324c164f3af5c2ec3cda3ba5369
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 02:35:03 2014 -0500
+
+    tests: add an octal test
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ ptest/pcalc.014    | 4 ++++
+ ptest/pcalc.014.at | 4 ++++
+ ptest/testsuite.at | 1 +
+ 3 files changed, 9 insertions(+)
+
+commit 25635545c723646365f00ce60d181168ca611a30
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 02:32:33 2014 -0500
+
+    tests: add an xor test
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ ptest/pcalc.013    | 35 +++++++++++++++++++++++++++++++++++
+ ptest/pcalc.013.at | 33 +++++++++++++++++++++++++++++++++
+ ptest/testsuite.at |  1 +
+ 3 files changed, 69 insertions(+)
+
+commit 86c2c5ccdadd171a09869da57429d277bb672682
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 02:26:44 2014 -0500
+
+    fix store to only write out when ready
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ store.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit 48f9e8307f0144e58a9a901c42f3fcbbea6186f1
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 02:21:52 2014 -0500
+
+    fix various spelling errors
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ EXAMPLE |  2 +-
+ README  | 14 +++++++-------
+ help.c  | 20 ++++++++++----------
+ store.c |  2 +-
+ str.c   |  2 +-
+ 5 files changed, 20 insertions(+), 20 deletions(-)
+
+commit 29b27687615c9358c0c703d6131949e76fd46738
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 02:11:05 2014 -0500
+
+    drop old win32 precompiled code and example batch scripts
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.mak         |  71 ------------------------------------------------------
+ win32/demo.bat    |   2 --
+ win32/makeall.bat |   1 -
+ win32/makesed.bat |   2 --
+ win32/pcalc.exe   | Bin 51507 -> 0 bytes
+ win32/ready.bat   |   2 --
+ win32/tst.bat     |   8 ------
+ 7 files changed, 86 deletions(-)
+
+commit 194b8e50de6756ec40b37486cf9aa7a0d9dd713a
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 02:07:41 2014 -0500
+
+    add support for octal numbers beginning with 0o
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ README   | 1 +
+ help.c   | 1 +
+ pcalcl.l | 2 +-
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+
+commit b5eeba25c469be0f248917e2acba490d9e356dad
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed Dec 24 02:06:28 2014 -0500
+
+    fix building w/bison-3
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit db5c5d587d4d24ff6b23405a92eeaad4c0f99618
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Aug 12 20:41:22 2012 -0400
+
+    update to version 3
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e277b2db2077137d9a9d8a2a32680079b5960cdd
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Aug 12 20:40:54 2012 -0400
+
+    dist: use xz rather than lzma
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ .gitignore | 1 +
+ Makefile   | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit c1bb7482c5655b686991617789a7b1dbd8343fd4
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Aug 12 20:38:48 2012 -0400
+
+    tests: run in parallel and colorize
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ ptest/Makefile     | 4 +++-
+ ptest/testsuite.at | 1 +
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+commit 7708f82c6db0908175a4af2c71317232aa87f143
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Mon Dec 5 18:22:18 2011 -0500
+
+    drop ulong/uint short hands
+    
+    These types aren't portable, and they're hardly used, so drop them.
+    
+    Reported-by: Patroklos Argyroudis <argp@census-labs.com>
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ convert.c | 16 ++++++++--------
+ convert.h |  3 ---
+ 2 files changed, 8 insertions(+), 11 deletions(-)
+
+commit c74eb06e83caaf69e435d884c183f9c8c656100a
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Mon Dec 5 18:09:44 2011 -0500
+
+    use stdlib.h for malloc()
+    
+    POSIX says malloc() is found in stdlib.h, so use that rather than malloc.h
+    as the latter header is not found in newer systems (like OS X).
+    
+    Reported-by: Patroklos Argyroudis <argp@census-labs.com>
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ symbol.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f840461d163eeeb1c601e260c3227e21fff2809e
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Mon Feb 8 18:58:34 2010 -0500
+
+    switch to git
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ .gitignore | 16 ++++++++++++++++
+ Makefile   |  4 ++--
+ 2 files changed, 18 insertions(+), 2 deletions(-)
+
+commit bbd31285f69c9b370f67912de7df4e13d4b7684b
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Dec 13 07:16:11 2009 +0000
+
+    tighten up version output
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 50fba5eed3ca31e10acc16d7cbf0ba09be5632e7
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Dec 13 07:00:13 2009 +0000
+
+    get pcalc.010 working
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ ptest/local.at     | 12 +++++++++---
+ ptest/pcalc.010.at | 13 +++++++++----
+ ptest/testsuite.at |  4 ++--
+ 3 files changed, 20 insertions(+), 9 deletions(-)
+
+commit c7faea22eab240aca579e5aaaae3a6895d556cb7
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Dec 13 06:46:22 2009 +0000
+
+    version bump to version 2
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit be758860cf3aabf2f2f5cb7f5a6f2191a96434c9
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Dec 13 06:45:39 2009 +0000
+
+    fix logic error in previous fgets commit
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ store.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 168695a42de5b0b6dbffafcd5158b91cec801486
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Dec 13 06:28:52 2009 +0000
+
+    check return value of fgets/fwrite to avoid gcc warnings
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalcl.l | 3 +++
+ store.c  | 9 ++++++---
+ 2 files changed, 9 insertions(+), 3 deletions(-)
+
+commit 1046df15be348d648df7dc2183b604f8e99f84ae
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Dec 13 06:19:54 2009 +0000
+
+    simple test for negation operator
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ ptest/pcalc.012    |  9 +++++++++
+ ptest/pcalc.012.at | 10 ++++++++++
+ ptest/testsuite.at |  2 ++
+ 3 files changed, 21 insertions(+)
+
+commit 335479c77ff38f13a947e83e4afc519bec8d7ca0
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Dec 13 06:18:32 2009 +0000
+
+    switch to 64bit output
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ convert.c          | 137 ++++++++++-------------------------------------------
+ convert.h          |   3 +-
+ pcalcl.l           |   6 +--
+ print.c            |  58 ++---------------------
+ ptest/pcalc.001.at |  20 ++++----
+ ptest/pcalc.002.at |   8 ++--
+ 6 files changed, 50 insertions(+), 182 deletions(-)
+
+commit 8dc27b23085c5c7079f0d695d83629a070bf3f95
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Sun Dec 13 05:35:46 2009 +0000
+
+    tests: normalize whitespace in test output to ignore thrashing
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ ptest/local.at     |  8 ++++++++
+ ptest/pcalc.001.at | 32 ++++++++++++++------------------
+ ptest/pcalc.002.at | 30 +++++++++++++-----------------
+ ptest/pcalc.003.at | 30 +++++++++++++-----------------
+ ptest/pcalc.004.at | 30 +++++++++++++-----------------
+ ptest/pcalc.005.at |  6 +-----
+ ptest/pcalc.006.at | 10 +++-------
+ ptest/pcalc.007.at |  8 ++------
+ ptest/pcalc.008.at | 16 ++++++----------
+ ptest/pcalc.009.at |  8 ++------
+ ptest/pcalc.010.at | 12 ++++--------
+ ptest/pcalc.011.at |  6 +-----
+ 12 files changed, 80 insertions(+), 116 deletions(-)
+
+commit b3544b19f20c4189f484628698d927c09736f907
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Thu Dec 3 09:58:56 2009 +0000
+
+    use m4_define() rather than m4_defun() as we dont need the latters semantics and we avoid build problems with autoconf-2.64+
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ ptest/local.at | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 9b23dc0c2370a98b8b8238bff7825e60fd067830
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Tue Nov 3 10:45:21 2009 +0000
+
+    kill off command line limitation by writing directly to the file
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 33 +++++++++------------------------
+ 1 file changed, 9 insertions(+), 24 deletions(-)
+
+commit bc112000c9d7ab74fc9bd3492cd53f874a2fe357
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Apr 18 00:31:12 2008 +0000
+
+    version bump to pcalc-1.3 and switch to lzma tarballs
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit b44c0e96fedfc74323a7940a36ba444da4cb63c5
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Apr 18 00:28:31 2008 +0000
+
+    document new operators
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ help.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 5ece7116ac95fcbbebe3f616d2487eb77cf31d94
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Apr 18 00:26:14 2008 +0000
+
+    add support for negation (~)
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 358c9d21076d450d38fc4dc32eae3d49fa3d2d8f
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Apr 18 00:24:34 2008 +0000
+
+    add support for xor
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y  | 1 +
+ pcalcl.l | 9 +++++++++
+ 2 files changed, 10 insertions(+)
+
+commit 21c69044f7d66bd4209513e2e66aa552fb34f421
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Apr 18 00:18:39 2008 +0000
+
+    remove done items
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ TODO | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 24f5d9e01c7d056c8f0335932d798cac0f9f464b
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Tue Apr 15 01:31:42 2008 +0000
+
+    accept 0b... as a binary prefix to match gcc
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalcl.l | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 22d496792872eedfed0f7281db21c0e92e163271
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Tue Apr 15 01:30:39 2008 +0000
+
+    change </> to <</>> to match C
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ help.c   | 2 +-
+ pcalcl.l | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 94ec6f88d96e876e2bb24080c60bf8f325490269
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Apr 11 07:25:00 2008 +0000
+
+    add support for binary nibble spacing and cleanup long_to_bin_str() in the process
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y |  7 +++++++
+ print.c | 50 ++++++++++++++++++++++++++++----------------------
+ 2 files changed, 35 insertions(+), 22 deletions(-)
+
+commit a350684396f37485f5c034e3beaf71ea091c7b64
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Apr 11 06:43:20 2008 +0000
+
+    explain possible input values
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ help.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 35bf56e3603663c5e7011ef042d656b95215f48e
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Thu Jan 3 03:18:23 2008 +0000
+
+    start a todo list
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ TODO | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 3416fba7d09ba89a30db14f2b249ec46ca22b6ba
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Thu Jan 3 03:09:12 2008 +0000
+
+    bump to 1.2
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 13c642b84ec9bc043cca8ed8b394e5d5082193c4
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Thu Jan 3 03:02:41 2008 +0000
+
+    make sure to initialize the buff string before doing strcat on it
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 00ad131b216f4dc33ccca790292adca8ca1503ee
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Thu Jan 3 02:52:17 2008 +0000
+
+    expand distcheck slightly
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 381cab9b3c88c168994748dc1587da26c0d7fafb
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Thu Jan 3 02:52:09 2008 +0000
+
+    make sure we initialize template file before using it in the error case
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit c806dd4e9db90d3a027ccaab75333a28a45439c9
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Oct 12 15:05:00 2007 +0000
+
+    fix VERSION detection under `make dist`
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ ptest/Makefile | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 3277f3602ac513c3b5f43d609beec76b4ee866c6
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 06:15:06 2007 +0000
+
+    fix typo in previous commit (ptest, not test)
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ed2f5b024f3aea701f52ab281e9c1c560b73587a
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 06:14:04 2007 +0000
+
+    convert testsuite to autotest
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile           | 13 ++------
+ ptest/Makefile     | 43 ++++++++++++++++++++++++
+ ptest/local.at     |  2 ++
+ ptest/pcalc.001    | 87 +++++++++++++++++++++++-------------------------
+ ptest/pcalc.001.at | 27 +++++++++++++++
+ ptest/pcalc.002    | 64 +++++++++++++++++------------------
+ ptest/pcalc.002.at | 21 ++++++++++++
+ ptest/pcalc.003    | 51 ++++++++++++++--------------
+ ptest/pcalc.003.at | 22 +++++++++++++
+ ptest/pcalc.004    | 28 ++++++++--------
+ ptest/pcalc.004.at | 18 ++++++++++
+ ptest/pcalc.005    | 20 +++++------
+ ptest/pcalc.005.at |  7 ++++
+ ptest/pcalc.006    | 33 +++++++++----------
+ ptest/pcalc.006.at |  8 +++++
+ ptest/pcalc.007    | 72 +++++++++++++++++++---------------------
+ ptest/pcalc.007.at | 17 ++++++++++
+ ptest/pcalc.008    | 74 ++++++++++++++++++++---------------------
+ ptest/pcalc.008.at | 22 +++++++++++++
+ ptest/pcalc.009    | 18 +++++-----
+ ptest/pcalc.009.at |  9 +++++
+ ptest/pcalc.010    | 47 +++++++++++++-------------
+ ptest/pcalc.010.at | 11 +++++++
+ ptest/pcalc.011    | 40 +++++++++++-----------
+ ptest/pcalc.011.at | 13 ++++++++
+ ptest/pcalc.var    |  1 -
+ ptest/testsuite.at | 15 +++++++++
+ testdat            | 42 -----------------------
+ testdata           | 97 ------------------------------------------------------
+ testorig           | 97 ------------------------------------------------------
+ 30 files changed, 492 insertions(+), 527 deletions(-)
+
+commit 33609b9c373d6b2a547f4314539e5e08532f4b51
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:49:22 2007 +0000
+
+    make sure we escape % in printf statement
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ help.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 0a28b65e4c54a5b683ee5bb6653bb7bc8c6157ec
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:48:15 2007 +0000
+
+    Change operator order so that binary 'or' and binary 'and' are not on the same level, but so that 'and' comes before 'or'.  This is to match the standard C precedence.  Also add support for the % (modulus), < (binary left shift), and > (binary right shift) operators.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ README  | 14 ++++++++------
+ help.c  | 16 +++++++++-------
+ pcalc.y |  9 +++++++--
+ 3 files changed, 24 insertions(+), 15 deletions(-)
+
+commit 548105e53a6fd0ed959839bdc087d2a0da2f6bc7
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:46:32 2007 +0000
+
+    cleanup warnings from gcc
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile |  4 +--
+ help.c   | 20 +++++--------
+ help.h   | 12 ++++----
+ pcalc.y  |  6 ++--
+ pcalcl.l |  4 +--
+ store.c  |  4 +--
+ str.c    |  1 +
+ symbol.c | 98 ++++++++++++++++++++++++++++++++--------------------------------
+ 8 files changed, 72 insertions(+), 77 deletions(-)
+
+commit 5f195a9b00513dbacd3f886b4daa6d7572d7271a
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:34:24 2007 +0000
+
+    punt generated files from svn and cleanup Makefile
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile    |   94 +--
+ pack        |   13 -
+ pcalc       |  Bin 39377 -> 0 bytes
+ pcalc.c     | 1218 -------------------------------
+ pcalc.h     |   21 -
+ pcalc.map   |   52 --
+ pcalc.old   |    1 -
+ pcalc.tab.c | 1218 -------------------------------
+ pcalc.tab.h |   21 -
+ pcalc.txt   |  151 ----
+ pcalc.y     |    4 +-
+ pcalcl.c    | 2294 -----------------------------------------------------------
+ skelcom.h   |   99 ---
+ skeleton.c  |  345 ---------
+ skeleton.h  |  145 ----
+ 15 files changed, 41 insertions(+), 5635 deletions(-)
+
+commit db993b5c42c889ef8e0eddc4f1491626743462e5
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:03:45 2007 +0000
+
+    Add support for the -h switch.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit fb6020a31843538bba4da0390266eaaa6e3a5537
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:02:47 2007 +0000
+
+    The \".*\" case is duplicated, remove the useless version ;).
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalcl.l | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+commit d3bfe07f6dcba2c6a7b3da8455a2fc87016a0dd3
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:01:46 2007 +0000
+
+    Tweaks so pcalc will build with flex 2.5.4a and 2.5.31.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ Makefile | 2 +-
+ pcalcl.l | 2 --
+ 2 files changed, 1 insertion(+), 3 deletions(-)
+
+commit 2b05fc64aa5fce97c0b295fa9edd5ac1b9bfd202
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:01:15 2007 +0000
+
+    Make sure we don't overflow buffers if input is really big.  Also move the string array to local scope.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ funct.c | 4 ++--
+ str.c   | 7 +++++++
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+commit 96bc376ef2a5d0a670f65492d7c575d5eef0acae
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 04:00:32 2007 +0000
+
+    Make sure we don't blow up if the user enters a lot of stuff (buff is normally a char[512], so if user gives us 5000 chars ...).  Also trim unused/duplicated variables.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+commit 6761cb427fa5079d5e62391b24ef76175cb5cfc1
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 03:59:27 2007 +0000
+
+    Fix the tempfile handling to avoid race conditions.  Also use /tmp as a fallback if $PWD is read-only for whatever reason.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 42 +++++++++++++++++++++++++++---------------
+ 1 file changed, 27 insertions(+), 15 deletions(-)
+
+commit 3ebb0715eb6a3af72974db0d5c2eeca0a21749a5
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 03:58:19 2007 +0000
+
+    We can't use execerror yet because it assumes the jumpbuf has been setup which it hasn't just yet.  Dump errors with fprintf to stderr instead.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ pcalc.y | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 12c1ade2f88f9f275102a5540fdfeb9520183f79
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 03:53:22 2007 +0000
+
+    declare all the work_str vars static since they'll conflict badly with each other if we don't.  pcalc.y doesn't actually use work_str.
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ funct.c | 2 +-
+ pcalc.y | 1 -
+ print.c | 2 +-
+ store.c | 2 +-
+ 4 files changed, 3 insertions(+), 4 deletions(-)
+
+commit a589834d0c11b211fb5e2f2356ccb8280cefe410
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 03:19:38 2007 +0000
+
+    touchup supplementary files
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ AUTHORS    |   5 +
+ COPYING    | 340 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ DISCLAIMER |   3 -
+ EXAMPLE    |   8 --
+ README     |   3 +-
+ pcalc.lsm  |  16 ---
+ 6 files changed, 346 insertions(+), 29 deletions(-)
+
+commit 72117c1db79f718c1658b394fcfc45a061e7afdc
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Fri Jun 22 03:13:41 2007 +0000
+
+    fix spelling typo in name
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ DISCAIMER  | 3 ---
+ DISCLAIMER | 3 +++
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 1a4351a497ebdb9e08173eadc6dacf7473adc343
+Author: Mike Frysinger <vapier@gmail.com>
+Date:   Wed May 23 22:11:13 2007 +0000
+
+    import original pcalc release
+    
+    Signed-off-by: Mike Frysinger <vapier@gmail.com>
+
+ DISCAIMER         |    3 +
+ EXAMPLE           |   49 ++
+ Makefile          |   85 ++
+ README            |  148 ++++
+ convert.c         |  351 ++++++++
+ convert.h         |   69 ++
+ funct.c           |  109 +++
+ help.c            |  155 ++++
+ help.h            |   64 ++
+ hocdecl.h         |   51 ++
+ math.c            |  101 +++
+ pack              |   13 +
+ pcalc             |  Bin 0 -> 39377 bytes
+ pcalc.c           | 1218 ++++++++++++++++++++++++++++
+ pcalc.h           |   21 +
+ pcalc.lsm         |   16 +
+ pcalc.mak         |   71 ++
+ pcalc.map         |   52 ++
+ pcalc.old         |    1 +
+ pcalc.tab.c       | 1218 ++++++++++++++++++++++++++++
+ pcalc.tab.h       |   21 +
+ pcalc.txt         |  151 ++++
+ pcalc.y           |  324 ++++++++
+ pcalcl.c          | 2294 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ pcalcl.l          |  506 ++++++++++++
+ print.c           |  105 +++
+ print.h           |   59 ++
+ ptest/pcalc.001   |   46 ++
+ ptest/pcalc.002   |   34 +
+ ptest/pcalc.003   |   26 +
+ ptest/pcalc.004   |   15 +
+ ptest/pcalc.005   |   10 +
+ ptest/pcalc.006   |   17 +
+ ptest/pcalc.007   |   39 +
+ ptest/pcalc.008   |   38 +
+ ptest/pcalc.009   |    9 +
+ ptest/pcalc.010   |   25 +
+ ptest/pcalc.011   |   21 +
+ ptest/pcalc.var   |    1 +
+ skelcom.h         |   99 +++
+ skeleton.c        |  345 ++++++++
+ skeleton.h        |  145 ++++
+ store.c           |  146 ++++
+ store.h           |   61 ++
+ str.c             |  201 +++++
+ str.h             |   59 ++
+ symbol.c          |  197 +++++
+ symbol.h          |   78 ++
+ testdat           |   42 +
+ testdata          |   97 +++
+ testorig          |   97 +++
+ win32/demo.bat    |    2 +
+ win32/makeall.bat |    1 +
+ win32/makesed.bat |    2 +
+ win32/pcalc.exe   |  Bin 0 -> 51507 bytes
+ win32/ready.bat   |    2 +
+ win32/tst.bat     |    8 +
+ 57 files changed, 9118 insertions(+)
